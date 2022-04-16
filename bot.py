@@ -18,3 +18,6 @@ for cog in cogs:
 async def on_ready():
     print(f"We have logged in as {client.user}")
 
+token=os.getenv("TOKEN")
+
+client.run(token)
