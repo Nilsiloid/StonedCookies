@@ -21,7 +21,7 @@ class Suggest(commands.Cog):
     async def confess(ctx, *args):
         if ctx.channel.type == discord.ChannelType.private:
             str0 = ' '.join(args)
-            channelId = 962016496626831360
+            channelId = 960125075825233940
             channel = ctx.get_channel(channelId)
             embed = discord.Embed(
                 title = "Title",

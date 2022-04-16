@@ -19,7 +19,7 @@ class Study(commands.Cog):
         self.client=client
 
     @commands.command()
-    async def join_vc(ctx):
+    async def join_vc(self, ctx):
         if (ctx.author.voice):
             channel = ctx.message.author.voice.channel
             await channel.connect()
@@ -30,7 +30,7 @@ class Study(commands.Cog):
 
 
     @commands.command()
-    async def study(ctx):
+    async def study(self, ctx):
         global start_time
         global flag_study
         global IST
@@ -54,7 +54,7 @@ class Study(commands.Cog):
 
 
     @commands.command()
-    async def stop_study(ctx):
+    async def stop_study(self, ctx):
         global start_time
         global end_time
         global flag_study
@@ -80,7 +80,7 @@ class Study(commands.Cog):
         await ctx.reply(embed = embed)
     
     @commands.command()
-    async def leave(ctx):
+    async def leave(self, ctx):
         global end_time
         global start_time
         global flag_study
@@ -90,11 +90,11 @@ class Study(commands.Cog):
         if not flag_study:
             await ctx.send("You left the vc")
             await ctx.voice_client.disconnect()
-            return ;
+            return
         else:
             await ctx.reply("You left the vc")
             await ctx.voice_client.disconnect()
-            return ;
+            return
 
 def setup(client):
     client.add_cog(Study(client))

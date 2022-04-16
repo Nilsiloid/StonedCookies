@@ -37,7 +37,8 @@ class Trivia(commands.Cog):
     @commands.command()
     async def trivia(self, ctx):
         desc = "\n".join([f"{i + 1} : {categ}" for i, categ in enumerate(self.category)])
-        emb = discord.Embed(description=desc,
+        emb = discord.Embed(
+            description=desc,
             colour = 0x0000ff,
             title = "Choose The Trivia Category"
         )
@@ -54,7 +55,7 @@ class Trivia(commands.Cog):
 
     async def quiz(self, ctx, index):
         #print("Hello")
-        api_url = 'https://api.api-ninjas.com/v1/trivia?category=%7B%7D%27.format(self.category[index]'
+        api_url = 'https://api.api-ninjas.com/v1/trivia?category={}'.format(self.category[index])
         #print("Hello")
         response = requests.get(api_url, headers={'X-Api-Key': 'thNqwveg8T9uywiyTE6FvA==Hvq6Go3pVLi2t1xd'})
         if response.status_code == requests.codes.ok:
