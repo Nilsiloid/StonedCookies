@@ -18,20 +18,20 @@ class Trivia(commands.Cog):
         self.client=client
 
     category=[
-        "art/literature",
+        "artliterature",
         "language",
-        "science/nature",
+        "sciencenature",
         "general",
-        "food/drink",
-        "people/places",
+        "fooddrink",
+        "peopleplaces",
         "geography",
-        "history/holidays",
+        "historyholidays",
         "entertainment",
-        "toys/games",
+        "toysgames",
         "music",
         "mathematics",
-        "religion/mythology",
-        "sports/leisure"
+        "religionmythology",
+        "sportsleisure"
     ]
 
     @commands.command()
@@ -41,22 +41,36 @@ class Trivia(commands.Cog):
         emb.set_footer(text="Enter the index of the category you want")
         await ctx.send(embed = emb)
         try:
-            msg = await self.client.wait_for('message', timeout=30.0, check=lambda x : x.channel == ctx.channel and x.author == ctx.author)
+            msg = await self.client.wait_for('message', timeout=20.0, check=lambda x : x.channel == ctx.channel and x.author == ctx.author)
         except asyncio.TimeoutError:
-            print("User took too long")
+            await ctx.reply("You took too long!")
         else:
             index=int(msg.content)
             await self.quiz(ctx, index-1)
 
     async def quiz(self, ctx, index):
+        #print("Hello")
         api_url = 'https://api.api-ninjas.com/v1/trivia?category={}'.format(self.category[index])
+        #print("Hello")
         response = requests.get(api_url, headers={'X-Api-Key': 'thNqwveg8T9uywiyTE6FvA==Hvq6Go3pVLi2t1xd'})
         if response.status_code == requests.codes.ok:
             data=json.loads(response.text)
-            print(data[0])
-            #await ctx.reply((data[0]["question"]))
+            answer=(data[0])['answer']
+            if 'question' in data[0].keys():
+                await ctx.reply((data[0])['question'])
         else:
             print("Error:", response.status_code, response.text)
+
+        try:
+            msg = await self.client.wait_for('message', timeout=100.0, check=lambda x : x.channel == ctx.channel and x.author == ctx.author)
+            print(msg.content)
+        except asyncio.TimeoutError:
+            await ctx.reply("You took too long!")
+
+        if answer.lower() == msg.content.lower():
+            await ctx.reply("Wow you are absolutely correct!")
+        else:
+            await ctx.reply(f"Unfortunately, you are wrong, the answer is {answer}")
         
 
 
