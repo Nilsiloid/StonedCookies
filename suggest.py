@@ -18,11 +18,11 @@ class Suggest(commands.Cog):
         self.client=client
 
     @commands.command()
-    async def confess(ctx, *args):
+    async def confess(self, ctx, *args):
         if ctx.channel.type == discord.ChannelType.private:
             str0 = ' '.join(args)
             channelId = 960125075825233940
-            channel = ctx.get_channel(channelId)
+            channel = self.client.get_channel(channelId)
             embed = discord.Embed(
                 title = "Title",
                 description = str0,
