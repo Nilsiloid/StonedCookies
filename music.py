@@ -25,6 +25,14 @@ class music(commands.cog):
         await ctx.send("Music Paused.")
         await ctx.voice_client.pause()
 
+    async def resume(self, ctx):
+        await ctx.send("Music resumed.")
+        await ctx.voice_client.resume()
+
+    async def stop(self, ctx):
+        await ctx.send("Music stopped. If you want to hear more, use $play and then add the url of the youtube link to the song..")
+        await ctx.voice_client.stop()
+
 
 
 def setup(client):
