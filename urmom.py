@@ -14,14 +14,14 @@ class urmom(commands.Cog):
         self.client=client
 
     @commands.command()
-    async def urmom(ctx):
+    async def urmom(self, ctx):
         res = requests.get("https://api.yomomma.info/")
         data = res.json()
         tmp = discord.Embed(title = data["joke"] , color = 0x696969)
         await ctx.reply(embed = tmp, mention_author = True)
 
     @commands.command()
-    async def kick(ctx, member: discord.Member, *, reason=None):
+    async def kick(self, ctx, member: discord.Member, *, reason=None):
 
         await member.kick(reason=reason)
 

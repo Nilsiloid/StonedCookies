@@ -68,11 +68,11 @@ class Trivia(commands.Cog):
 
         try:
             msg = await self.client.wait_for('message', timeout=100.0, check=lambda x : x.channel == ctx.channel and x.author == ctx.author)
-            print(msg.content)
+            #print(msg.content)
         except asyncio.TimeoutError:
             await ctx.reply("You took too long!")
 
-        if answer.lower() == msg.content.lower():
+        if msg.content.lower() in answer.lower():
             await ctx.reply("Wow you are absolutely correct!")
         else:
             await ctx.reply(f"Unfortunately, you are wrong, the answer is {answer}")

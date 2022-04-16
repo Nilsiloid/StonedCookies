@@ -12,6 +12,7 @@ import pytz
 IST = pytz.timezone('Asia/Kolkata')
 
 load_dotenv()
+flag_study=False
 
 
 class Study(commands.Cog):
@@ -19,7 +20,7 @@ class Study(commands.Cog):
         self.client=client
 
     @commands.command()
-    async def join_vc(self, ctx):
+    async def join(self, ctx):
         if (ctx.author.voice):
             channel = ctx.message.author.voice.channel
             await channel.connect()
@@ -68,7 +69,7 @@ class Study(commands.Cog):
             start_time = 0
 
         embed = discord.Embed(
-            title = "Title",
+            title = "Your study session has ended.",
             description = f"The time spent studying in vc was {delta}s ",
             colour = 0x0000ff
         )
@@ -84,15 +85,13 @@ class Study(commands.Cog):
         global end_time
         global start_time
         global flag_study
-        if ctx.guild.voice_client not in ctx.voice_clients:
+        if ctx.guild.voice_client not in self.client.voice_clients:
             await ctx.reply("bot nahi he vc mein madarchod 🤬" , mention_author = True)
             return ; 
         if not flag_study:
-            await ctx.send("You left the vc")
             await ctx.voice_client.disconnect()
             return
         else:
-            await ctx.reply("You left the vc")
             await ctx.voice_client.disconnect()
             return
 

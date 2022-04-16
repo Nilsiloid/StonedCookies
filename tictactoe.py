@@ -13,9 +13,8 @@ import pytz
 IST=pytz.timezone('Asia/Kolkata')
 start_time = 0
 end_time = 0
-flag_study = False
-player1 = ""
-player2 = ""
+p_1 = ""
+p_2 = ""
 turn = ""
 gameOver = True
 global play
@@ -40,8 +39,8 @@ class TicTacToe(commands.Cog):
     @commands.command()
     async def tictactoe(self, ctx, p1: discord.Member, p2: discord.Member):
         global count
-        global player1
-        global player2
+        global p_1
+        global p_2
         global turn
         global gameOver
 
@@ -54,8 +53,8 @@ class TicTacToe(commands.Cog):
             gameOver = False
             count = 0
 
-            player1 = p1
-            player2 = p2
+            p_1 = p1
+            p_2 = p2
 
             # print the board
             line = ""
@@ -70,19 +69,19 @@ class TicTacToe(commands.Cog):
             # determine who goes first
             num = random.randint(1, 2)
             if num == 1:
-                turn = player1
-                await ctx.send("It is <@" + str(player1.id) + ">'s turn.")
+                turn = p_1
+                await ctx.send("It is <@" + str(p_1.id) + ">'s turn.")
             elif num == 2:
-                turn = player2
-                await ctx.send("It is <@" + str(player2.id) + ">'s turn.")
+                turn = p_2
+                await ctx.send("It is <@" + str(p_2.id) + ">'s turn.")
         else:
             await ctx.send("A game is already in progress! Finish it before starting a new one.")
 
     @commands.command()
     async def place(self, ctx, pos: int):
         global turn
-        global player1
-        global player2
+        global p_1
+        global p_2
         global board
         global count
         global gameOver
@@ -90,9 +89,9 @@ class TicTacToe(commands.Cog):
         if not gameOver:
             mark = ""
             if turn == ctx.author:
-                if turn == player1:
+                if turn == p_1:
                     mark = ":regional_indicator_x:"
-                elif turn == player2:
+                elif turn == p_2:
                     mark = ":o2:"
                 if 0 < pos < 10 and board[pos - 1] == ":white_large_square:" :
                     board[pos - 1] = mark
@@ -117,10 +116,10 @@ class TicTacToe(commands.Cog):
                         await ctx.send("It's a tie!")
 
                     # switch turns
-                    if turn == player1:
-                        turn = player2
-                    elif turn == player2:
-                        turn = player1
+                    if turn == p_1:
+                        turn = p_2
+                    elif turn == p_2:
+                        turn = p_1
                 else:
                     await ctx.send("Be sure to choose an integer between 1 and 9 (inclusive) and an unmarked tile.")
             else:
