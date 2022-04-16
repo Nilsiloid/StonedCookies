@@ -6,12 +6,13 @@ load_dotenv()
 import music_cmds
 import urmom
 import trivia
-#import tictactoe
+import tictactoe
+import suggest
 #import study
 
 client=commands.Bot(command_prefix='$', intents = discord.Intents.all())
 
-cogs=["music_cmds", "tictactoe", "study", "urmom", "trivia"]
+cogs=["music_cmds", "tictactoe", "study", "urmom", "trivia", "suggest"]
 
 for cog in cogs:
     client.load_extension(cog)
