@@ -37,9 +37,13 @@ class Trivia(commands.Cog):
     @commands.command()
     async def trivia(self, ctx):
         desc = "\n".join([f"{i + 1} : {categ}" for i, categ in enumerate(self.category)])
-        emb = discord.Embed(description=desc)
+        emb = discord.Embed(description=desc,
+            colour = 0x0000ff,
+            title = "Choose The Trivia Category"
+        )
+        emb.set_image(url="https://media.discordapp.net/attachments/959752581771583532/964933173882552411/download-1.jpg")
         emb.set_footer(text="Enter the index of the category you want")
-        await ctx.send(embed = emb)
+        await ctx.reply(embed = emb)
         try:
             msg = await self.client.wait_for('message', timeout=20.0, check=lambda x : x.channel == ctx.channel and x.author == ctx.author)
         except asyncio.TimeoutError:
@@ -50,7 +54,7 @@ class Trivia(commands.Cog):
 
     async def quiz(self, ctx, index):
         #print("Hello")
-        api_url = 'https://api.api-ninjas.com/v1/trivia?category={}'.format(self.category[index])
+        api_url = 'https://api.api-ninjas.com/v1/trivia?category=%7B%7D%27.format(self.category[index]'
         #print("Hello")
         response = requests.get(api_url, headers={'X-Api-Key': 'thNqwveg8T9uywiyTE6FvA==Hvq6Go3pVLi2t1xd'})
         if response.status_code == requests.codes.ok:

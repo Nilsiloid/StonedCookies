@@ -18,6 +18,7 @@ player1 = ""
 player2 = ""
 turn = ""
 gameOver = True
+global play
 
 board = []
 
