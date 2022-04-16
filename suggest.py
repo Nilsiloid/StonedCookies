@@ -17,7 +17,7 @@ class Suggest(commands.Cog):
     def __init__(self, client):
         self.client=client
 
-    @commands.command()
+    @commands.command(name="confess", help="You can drop a complaint/suggestion regarding the bot or the server anonymously here.")
     async def confess(self, ctx, *args):
         if ctx.channel.type == discord.ChannelType.private:
             str0 = ' '.join(args)

@@ -34,7 +34,7 @@ class Trivia(commands.Cog):
         "sportsleisure"
     ]
 
-    @commands.command()
+    @commands.command(name="trivia", help="using this command shows you the different categories and starts a game of trivia.")
     async def trivia(self, ctx):
         desc = "\n".join([f"{i + 1} : {categ}" for i, categ in enumerate(self.category)])
         emb = discord.Embed(

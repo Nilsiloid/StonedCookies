@@ -6,7 +6,7 @@ class Music(commands.Cog):
     def __init__(self, client):
         self.client=client
 
-    @commands.command()
+    @commands.command(name="play", help="plays music by using Youtube URL.")
     async def play(self, ctx, url):
         if(ctx.author.voice):
             ctx.voice_client.stop()     #stops the song.
@@ -24,7 +24,7 @@ class Music(commands.Cog):
             await ctx.send("I am terribly sorry, but I cannot join you as you are not in a voice channel.")
 
     
-    @commands.command()
+    @commands.command(name="pause", help="Pauses currently playing music.")
     async def pause(self, ctx):
         if(ctx.author.voice):
             await ctx.send("Music Paused.")
@@ -32,7 +32,7 @@ class Music(commands.Cog):
         else: 
             await ctx.send("I am terribly sorry, but I cannot join you as you are not in a voice channel.")
 
-    @commands.command()
+    @commands.command(name="resume", help="Resumes music.")
     async def resume(self, ctx):
         if(ctx.author.voice):
             await ctx.send("Music resumed.")
@@ -40,7 +40,7 @@ class Music(commands.Cog):
         else: 
             await ctx.send("I am terribly sorry, but I cannot join you as you are not in a voice channel.")
 
-    @commands.command()
+    @commands.command(name="stop", help="Stops currently playing music.")
     async def stop(self, ctx):
         if(ctx.author.voice):
             await ctx.send("Music stopped. If you want to listen to more songs, use $play and then add the url of the youtube link to the song..")

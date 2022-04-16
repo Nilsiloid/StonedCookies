@@ -36,7 +36,7 @@ class TicTacToe(commands.Cog):
     def __init__(self, client):
         self.client=client
 
-    @commands.command()
+    @commands.command(name="tictactoe", help="using this command and pinging 2 people will start a game of tic tac toe..")
     async def tictactoe(self, ctx, p1: discord.Member, p2: discord.Member):
         global count
         global p_1
@@ -77,7 +77,7 @@ class TicTacToe(commands.Cog):
         else:
             await ctx.send("A game is already in progress! Finish it before starting a new one.")
 
-    @commands.command()
+    @commands.command(name="place", help="Places your token(X or O) in the given position.")
     async def place(self, ctx, pos: int):
         global turn
         global p_1

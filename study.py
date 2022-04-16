@@ -19,7 +19,7 @@ class Study(commands.Cog):
     def __init__(self, client):
         self.client=client
 
-    @commands.command()
+    @commands.command(name="join", help="Bot connects to the vc you are in.")
     async def join(self, ctx):
         if (ctx.author.voice):
             channel = ctx.message.author.voice.channel
@@ -30,7 +30,7 @@ class Study(commands.Cog):
             await ctx.reply("I am terribly sorry, but I cannot join you as you are not in a voice channel.")
 
 
-    @commands.command()
+    @commands.command(name="study", help="Starts your study session and timer.")
     async def study(self, ctx):
         global start_time
         global flag_study
@@ -54,7 +54,7 @@ class Study(commands.Cog):
             await ctx.send("I am terribly sorry, but I cannot join you as you are not in a voice channel.")
 
 
-    @commands.command()
+    @commands.command(name="stop_study", help="Ends the study session and reports the amount of time you studied..")
     async def stop_study(self, ctx):
         global start_time
         global end_time
@@ -80,7 +80,7 @@ class Study(commands.Cog):
 
         await ctx.reply(embed = embed)
     
-    @commands.command()
+    @commands.command(name="leave", help="Disconnects from the Voice Channel.")
     async def leave(self, ctx):
         global end_time
         global start_time
