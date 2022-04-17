@@ -21,6 +21,7 @@ class urmom(commands.Cog):
         await ctx.reply(embed = tmp, mention_author = True)
 
     @commands.command(name="kick", help="Kicks the mentioned user from the server.")
+    @commands.has_permissions(administrator=True)
     async def kick(self, ctx, member: discord.Member, *, reason=None):
 
         await member.kick(reason=reason)
