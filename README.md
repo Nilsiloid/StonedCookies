@@ -1,6 +1,6 @@
 # StonedCookie
 
-Contents:
+### Contents:
 * Introduction
 * Features
 * Commands

@@ -1,6 +1,3 @@
-from email import message
-from nis import cat
-from unicodedata import category
 import discord
 from discord.ext import commands
 import os
