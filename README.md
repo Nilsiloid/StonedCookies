@@ -1,11 +1,11 @@
 # StonedCookie
 
 ### Contents:
-- Inspiration
-- Introduction
-- Challenges
-- Features
-- Commands
+- [Inspiration](#installation)
+- [Introduction](#introduction)
+- [Challenges](#challenges)
+- [Features](#features)
+- [Commands](#commands)
 
 ### Inspiration
 
