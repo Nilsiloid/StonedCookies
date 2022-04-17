@@ -50,7 +50,9 @@ We ran into multiple challenges as this was our first time coding a discord bot.
     $stop - stops the song.
 * Suggest-commands:
     $confess - dm the confession to the bot which will send it to the respective channel.
+    
     $setconfess - shows all the channels existing and initializes process of setting the channel where all confession would be logged.
+    
     $setid - sets the channel using its id.
 * TicTacToe-commands:
     $tictactoe - tag 2 people and start your own game of tic tac toe.
