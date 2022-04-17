@@ -36,6 +36,8 @@ class Study(commands.Cog):
         global flag_study
         global IST
         if (ctx.author.voice):
+            channel = ctx.message.author.voice.channel
+            await channel.connect()
             flag_study = True
             start_time = datetime.datetime.now(IST)
             print(start_time)
