@@ -9,7 +9,7 @@
 
 ### Inspiration
 
-Often students voice, suggestions, ideas and complaints regarding the "system" remain unheard. This could be due to many reasons, majorly being the lack of confidence and the fear of superiors/seniors. These are some issues that we and our peers faced. Us being college students, we thought if our voice /suggestions/complaints could be heard by our peers, seniors and other officials without getting our identity doxxed that would solve more than half of our problems! Hence we got the idea to implement $confess command. Now students issues/sugestions could be logged annonymously in an specific a channel in the server that would be visible all.
+Often students' voice, suggestions, ideas and complaints regarding the "system" remain unheard. This could be due to many reasons, majorly being the lack of confidence and the fear of superiors/seniors. These are some issues that we and our peers faced. Us being college students, we thought if our voice /suggestions/complaints could be heard by our peers, seniors and other officials without getting our identity doxxed that would solve more than half of our problems! Hence we got the idea to implement $confess command. Now students issues/sugestions could be logged annonymously in an specific a channel in the server that would be visible all.
 
 We also wanted to track our study timings and thus our study schedule. We decided to use this opportunity to create a Discord bot which will join our voice channel and use the $study command to set a timer. We then thought about adding additional features such as trivia and music to help us during such study sessions.
 
