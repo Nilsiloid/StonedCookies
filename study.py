@@ -38,10 +38,10 @@ class Study(commands.Cog):
         global flag_study
         global IST
         if (ctx.author.voice):
-            voice = discord.utils.get(self.client.voice_clients, guild=ctx.guild)
-            if voice == None:
-                channel = ctx.message.author.voice.channel
-                await channel.connect()
+            #voice = discord.utils.get(self.client.voice_clients, guild=ctx.guild)
+            #if voice == None:
+            #    channel = ctx.message.author.voice.channel
+            #    await channel.connect()
             flag_study = True
             start_time = datetime.datetime.now(IST)
             print(start_time)
@@ -70,8 +70,8 @@ class Study(commands.Cog):
             end_time = datetime.datetime.now(IST)
             print(end_time)
             delta = end_time-start_time
-            channel = ctx.message.author.voice.channel
-            await channel.disconnect()
+            #channel = ctx.message.author.voice.channel
+            #await ctx.voice_client.disconnect()
         if flag_study:
             flag_study = False
             start_time = 0
