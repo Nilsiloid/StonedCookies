@@ -60,7 +60,7 @@ class Suggest(commands.Cog):
 
         set = False
 
-    @commands.command(name="confess", help="You can drop a complaint/suggestion regarding the bot or the server anonymously here.")
+    @commands.command(name="confess", help="DM the bot and you can drop a complaint/suggestion regarding the bot or the server anonymously here.")
     async def confess(self, ctx, *args):
         if ctx.channel.type == discord.ChannelType.private:
             str0 = ' '.join(args)
@@ -73,7 +73,7 @@ class Suggest(commands.Cog):
             embed = discord.Embed(
                 description = str0,
                 colour = 0x0000ff
-                )
+            )
             embed.set_footer(text="DM me $confess to post an anonymous confession in this channel.")
             
             
