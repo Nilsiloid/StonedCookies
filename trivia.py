@@ -50,12 +50,13 @@ class Trivia(commands.Cog):
         except asyncio.TimeoutError:
             await ctx.reply("You took too long!")
         else:
-            if isinstance(msg.content, int)==True:
+            if msg.content[0]=='0' or msg.content[0]=='1' or msg.content[0]=='2' or msg.content[0]=='3' or msg.content[0]=='4' or msg.content[0]=='5' or msg.content[0]=='6' or msg.content[0]=='7' or msg.content[0]=='8' or msg.content[0]=='9':
                 index=int(msg.content)
                 if index>14 or index<1:
                     await ctx.reply("Please enter a number in the range 1-14.")
                     await self.trivia(ctx)
                 await self.quiz(ctx, index-1)
+
             else:
                 await ctx.reply("Please enter a number in the range 1-14.")
                 await self.trivia(ctx)
