@@ -9,6 +9,8 @@ class Music(commands.Cog):
     @commands.command(name="play", help="plays music by using Youtube URL.")
     async def play(self, ctx, url):
         if(ctx.author.voice):
+            channel = ctx.message.author.voice.channel
+            await channel.connect()
             ctx.voice_client.stop()     #stops the song.
             FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
             YDL_OPTIONS = {'format': "bestaudio"}
