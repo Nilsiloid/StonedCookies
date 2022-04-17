@@ -20,22 +20,30 @@ class Suggest(commands.Cog):
         self.client=client
 
     @commands.command(name="setconfess", help="displays the channels to whom you can set the id.")
-    @commands.has_permissions(administrator=True)
+    #@commands.has_permissions(administrator=True)
     async def setconfess(self, ctx):
-        global set
-        global j
-        set = True
-        global text_channel_list
-        text_channel_list = []
-        for server in self.client.guilds:
-            if server.id == ctx.message.guild.id:
-                for channel in server.channels:
-                    if str(channel.type) == 'text':
-                        text_channel_list.append(channel)
-        #print(text_channel_list)
-        for j in range(len(text_channel_list)):
-            await ctx.send(f"{j+1}. {text_channel_list[j]}")
-        await ctx.reply("Type '$setid <number>', where number stands for the channel number in the given list which you'd like to set as your suggestion channel.")
+        if ctx.message.author.guild_permissions.administrator:
+            global set
+            global j
+            set = True
+            global text_channel_list
+            text_channel_list = []
+            for server in self.client.guilds:
+                if server.id == ctx.message.guild.id:
+                    for channel in server.channels:
+                        if str(channel.type) == 'text':
+                            text_channel_list.append(channel)
+            #print(text_channel_list)
+            for j in range(len(text_channel_list)):
+                await ctx.send(f"{j+1}. {text_channel_list[j]}")
+            await ctx.reply("Type '$setid <number>', where number stands for the channel number in the given list which you'd like to set as your suggestion channel.")
+            return
+
+        
+            
+        else:
+            await ctx.reply("You aren't an admin noob HAHAHAHAH JAJAJAJA. It's an admin only command, cope.")
+            return
 
     @commands.command(name="setid", help="Sets channel to which confessions will be submitted.")
     @commands.has_permissions(administrator=True)
