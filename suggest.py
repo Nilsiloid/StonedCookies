@@ -28,10 +28,11 @@ class Suggest(commands.Cog):
         global text_channel_list
         text_channel_list = []
         for server in self.client.guilds:
-            for channel in server.channels:
-                if str(channel.type) == 'text':
-                    text_channel_list.append(channel)
-        print(text_channel_list)
+            if server.id == ctx.message.guild.id:
+                for channel in server.channels:
+                    if str(channel.type) == 'text':
+                        text_channel_list.append(channel)
+        #print(text_channel_list)
         for j in range(len(text_channel_list)):
             await ctx.send(f"{j+1}. {text_channel_list[j]}")
         await ctx.reply("Type '$setid <number>', where number stands for the channel number in the given list which you'd like to set as your suggestion channel.")
