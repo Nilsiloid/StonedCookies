@@ -8,7 +8,7 @@ import urmom
 import trivia
 import tictactoe
 import suggest
-#import study
+import study
 
 client=commands.Bot(command_prefix='$', intents = discord.Intents.all())
 

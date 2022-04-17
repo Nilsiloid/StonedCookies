@@ -19,7 +19,7 @@ class Suggest(commands.Cog):
     def __init__(self, client):
         self.client=client
 
-    @commands.command()
+    @commands.command(name="setconfess", help="displays the channels to whom you can set the id.")
     @commands.has_permissions(administrator=True)
     async def setconfess(self, ctx):
         global set
