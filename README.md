@@ -13,8 +13,6 @@ Often students' voice, suggestions, ideas and complaints regarding the "system" 
 
 We also wanted to track our study timings and thus our study schedule. We decided to use this opportunity to create a Discord bot which will join our voice channel and use the $study command to set a timer. We then thought about adding additional features such as trivia and music to help us during such study sessions.
 
-We also decided to add the confess feature for anyone who wants to suggest something to/complain about the server by staying anonymous.
-
 ### Introduction
 
 StonedCookie is the name of our Discord bot.
