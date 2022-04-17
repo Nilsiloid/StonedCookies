@@ -22,8 +22,10 @@ class Study(commands.Cog):
     @commands.command(name="join", help="Bot connects to the vc you are in.")
     async def join(self, ctx):
         if (ctx.author.voice):
-            channel = ctx.message.author.voice.channel
-            await channel.connect()
+            voice = discord.utils.get(self.client.voice_clients, guild=ctx.guild)
+            if voice == None:
+                channel = ctx.message.author.voice.channel
+                await channel.connect()
             
             
         else:
@@ -36,8 +38,10 @@ class Study(commands.Cog):
         global flag_study
         global IST
         if (ctx.author.voice):
-            channel = ctx.message.author.voice.channel
-            await channel.connect()
+            voice = discord.utils.get(self.client.voice_clients, guild=ctx.guild)
+            if voice == None:
+                channel = ctx.message.author.voice.channel
+                await channel.connect()
             flag_study = True
             start_time = datetime.datetime.now(IST)
             print(start_time)
