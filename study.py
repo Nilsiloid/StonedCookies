@@ -40,11 +40,11 @@ class Study(commands.Cog):
             start_time = datetime.datetime.now(IST)
             print(start_time)
             embed = discord.Embed(
-                title = "Your study-buddy bot ",
-                description = "study session started at {0}".format(datetime.datetime.strftime(start_time , "%H:%M:%S")),
+                title = "Study-session",
+                description = "Study session started at {0}".format(datetime.datetime.strftime(start_time , "%H:%M:%S")),
                 colour = 0x0000ff
             )
-            embed.set_footer(text="Your study session has started")
+            embed.set_footer(text="Happy studying!")
             
             embed.set_author(name="Hackathon_Bot", icon_url='https://cdn.discordapp.com/attachments/909526973099950112/964870222198767656/images.jpg')
                     

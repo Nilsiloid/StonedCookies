@@ -68,7 +68,9 @@ class Trivia(commands.Cog):
 
         try:
             msg = await self.client.wait_for('message', timeout=100.0, check=lambda x : x.channel == ctx.channel and x.author == ctx.author)
-            #print(msg.content)
+            #if isinstance(msg.content, int)==False or (msg.content>14 or msg.content<1):       DOUBT..
+            #    await ctx.reply("Please enter a number from 1-14 only.")
+
         except asyncio.TimeoutError:
             await ctx.reply("You took too long!")
 
