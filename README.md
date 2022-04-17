@@ -19,7 +19,8 @@ We also wanted to track our study timings and thus our study schedule. We decide
 StonedCookie is the name of our Discord bot.
 We used Python to code our bot. It has several functions, some of which are listed below:
 
-* Study - The bot will stay in the VC with you and set a timer for your study session.
+* Confess - an anonymous complaint/suggestion feature for users to give feedback about happenings in the server/organisation around the server, etc.
+* Study - The bot will set a timer for your study session.
 * Music - Many people like to listen to music while studying. This function performs precisely that xD.
 * Trivia - Sudden urge to answer a random question? Our unique trivia feature is there for this.
 
@@ -76,7 +77,7 @@ We ran into multiple challenges as this was our first time coding a discord bot.
     
     $**stop** - stops the song.
     
-* Suggest-commands:
+* Confess-commands:
     
     $**confess** - dm the confession to the bot which will send it to the respective channel.
     
