@@ -40,27 +40,42 @@ We ran into multiple challenges as this was our first time coding a discord bot.
 
 * Study-commands:
     $join - joins the voice channel the user is present in.
+    
     $study - starts our study session and timer.
+    
     $stop_study - ends our study session and displays the amount of time we studied once we are done.
+    
     $leave - leaves the voice channel.
+    
 * Music-commands:
     $play - plays the song we want to listen to using the YouTube url.
+    
     $pause - pauses the song currently playing.
+    
     $resume - resumes the paused song.
+    
     $stop - stops the song.
+    
 * Suggest-commands:
     $confess - dm the confession to the bot which will send it to the respective channel.
     
     $setconfess - shows all the channels existing and initializes process of setting the channel where all confession would be logged.
     
     $setid - sets the channel using its id.
+    
 * TicTacToe-commands:
     $tictactoe - tag 2 people and start your own game of tic tac toe.
+    
     $place - places your token(X or O) in the given position you pass after place.
+    
 * Trivia-commands:
     $trivia - shows the different categories of questions. Messaging the number will then cause the bot to reply with a question.
+    
 * UrMOM-commands:
     $urmom - generates a Your Mom joke.
+    
 * Misc-commands:
     $kick - kicks user mentioned from the server.
+    
     $help - shows the commands and their functioning.
+    
