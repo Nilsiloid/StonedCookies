@@ -3,6 +3,7 @@
 ### Contents:
 - [Inspiration](#installation)
 - [Introduction](#introduction)
+- [How to Run](#how-to-run)
 - [Challenges](#challenges)
 - [Features](#features)
 - [Commands](#commands)
@@ -21,6 +22,23 @@ We used Python to code our bot. It has several functions, some of which are list
 * Study - The bot will stay in the VC with you and set a timer for your study session.
 * Music - Many people like to listen to music while studying. This function performs precisely that xD.
 * Trivia - Sudden urge to answer a random question? Our unique trivia feature is there for this.
+
+### How to Run
+
+Once you fork the repo and download the code, you will need to use the following commands in the respective terminal of your system.
+
+    pip install discord.py
+    
+    pip install ast
+    
+    pip install PyNaCl
+    
+    pip install youtube_dl
+    
+    pip install python-dotenv
+    
+    pip install requests
+
 
 ### Challenges
 
