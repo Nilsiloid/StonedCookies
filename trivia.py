@@ -44,14 +44,21 @@ class Trivia(commands.Cog):
         )
         emb.set_image(url="https://media.discordapp.net/attachments/959752581771583532/964933173882552411/download-1.jpg")
         emb.set_footer(text="Enter the index of the category you want")
-        await ctx.reply(embed = emb)
+        await ctx.send(embed = emb)
         try:
             msg = await self.client.wait_for('message', timeout=20.0, check=lambda x : x.channel == ctx.channel and x.author == ctx.author)
         except asyncio.TimeoutError:
             await ctx.reply("You took too long!")
         else:
-            index=int(msg.content)
-            await self.quiz(ctx, index-1)
+            if isinstance(msg.content, int)==True:
+                index=int(msg.content)
+                if index>14 or index<1:
+                    await ctx.reply("Please enter a number in the range 1-14.")
+                    await self.trivia(ctx)
+                await self.quiz(ctx, index-1)
+            else:
+                await ctx.reply("Please enter a number in the range 1-14.")
+                await self.trivia(ctx)
 
     async def quiz(self, ctx, index):
         #print("Hello")
