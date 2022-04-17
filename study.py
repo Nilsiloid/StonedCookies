@@ -66,6 +66,8 @@ class Study(commands.Cog):
             end_time = datetime.datetime.now(IST)
             print(end_time)
             delta = end_time-start_time
+            channel = ctx.message.author.voice.channel
+            await channel.disconnect()
         if flag_study:
             flag_study = False
             start_time = 0
