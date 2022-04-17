@@ -26,11 +26,17 @@ We used Python to code our bot. It has several functions, some of which are list
 ### How to Run
 
 Once you fork the repo and download the code, you will need to use the following commands in the respective terminal of your system.
+
     pip install discord.py
+    
     pip install ast
+    
     pip install PyNaCl
+    
     pip install youtube_dl
+    
     pip install python-dotenv
+    
     pip install requests
 
 
